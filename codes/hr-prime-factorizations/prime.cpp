@@ -11,7 +11,7 @@ inline uint64_t factorize(uint64_t &num, uint64_t prime) {
     while (num % prime == 0) {num /= prime; exp++;}
     return exp;
 }
-
+// g++ prime.cpp -o "prime.exe"
 int main(void) {
     string m_factor_str; m_factor_str.reserve(100);
     string n_factor_str; n_factor_str.reserve(100);
