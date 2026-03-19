@@ -9,6 +9,7 @@ def gen_primes(low=2, high=500_000):
 
 def factors(n:int, primes:list):
     factors = [[i, 0] for i in primes]
+    if len(factors) == 0: return [[1, 0]] # in case of 1 inputs
     for i in range(len(primes)):
         exponent = 0
         prime = primes[i]
@@ -19,6 +20,10 @@ def factors(n:int, primes:list):
     return factors
 
 def print_factors(factors:list):
+    prime, exponent = factors[0]
+    if prime == 1 : 
+        print(1)
+        return
     buffer = []
     for i in range(len(factors)):
         prime, exponent = factors[i]

@@ -22,7 +22,7 @@ int main(void) {
 
     // eratosthenes sieve to generate is_prime bool map
     uint64_t max_val = max(m_, n_);
-    uint64_t sieve_limit = static_cast<uint64_t>(sqrt((long double)max_val)) + 1;
+    uint64_t sieve_limit = static_cast<uint64_t>(sqrt((long double)max_val));
 
     vector<bool> is_prime(max_val + 1, true); // the index max_val itself is needed
     is_prime[0] = is_prime[1] = false; // trivial fact
@@ -63,15 +63,18 @@ int main(void) {
             for (uint64_t i = 0; i < lcm_exp; i++) {LCM *= p_;}
         } 
     }
-    // get rid of the last "*"
-    m_factor_str.pop_back(); n_factor_str.pop_back();
-
+    // pop_back is to get rid of the last "*"
+    if (!m_factor_str.empty()) {m_factor_str.pop_back();} else {m_factor_str = "1";}
+    if (!n_factor_str.empty()) {n_factor_str.pop_back();} else {n_factor_str = "1";}
     if (GCD > 1) {
         gcd_str.pop_back(); 
         gcd_str += " = " + to_string(GCD);
     } else {gcd_str = "1 = 1";}
+    if (LCM > 1) {
+        lcm_str.pop_back();
+        lcm_str += " = " + to_string(LCM);
+    } else {lcm_str = "1 = 1";}
     
-    lcm_str.pop_back(); lcm_str += " = " + to_string(LCM);
     cout << m_factor_str << "\n";
     cout << n_factor_str << "\n";
     cout << gcd_str << "\n";
