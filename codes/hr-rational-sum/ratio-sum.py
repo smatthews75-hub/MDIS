@@ -1,3 +1,4 @@
+# ACCEPTED 100% SOLUTION
 from math import gcd
 n = int(input()) - 1
 

@@ -5,6 +5,10 @@
 
 using namespace std;
 
+// due to hackerrank not supporting arbitrary precision library for C++
+// this C++ implementation is limited to the maximum performance of __uint128_t
+// which regardless is insufficient for the massive numbers in the test cases..
+
 // custom big string printer
 inline string big_print(__uint128_t x_) {
     if (x_ == 0) {return "0";}

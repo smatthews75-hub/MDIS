@@ -1,3 +1,4 @@
+// ACCEPTED 100% SOLUTION
 #include <iostream>
 #include <cstdint>
 #include <vector>
